@@ -24,7 +24,7 @@ var io = require('socket.io').listen(server);
 /**
  * Listen on provided port, on all network interfaces.
  */
- app.post("/listFriends",function(req, res){
+app.post("/listFriends",function(req, res){
    var clonedArray = usersCollection.slice();
 
    // Getting the userId from the request body as this is just a demo
@@ -147,4 +147,9 @@ io.on('connection', function(socket){
 
     console.log("Message dispatched.");
   });
+});
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
 });
