@@ -3,14 +3,37 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { PatientPortalComponent } from './patient-portal/patient-portal.component';
+import { PhysicianPortalComponent } from './physician-portal/physician-portal.component';
+import { AdminPortalComponent } from './admin-portal/admin-portal.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {DemoMaterialModule} from './material-module';
+import { FormsModule } from '@angular/forms';
+import {Http} from '@angular/http'
+import { NgChatModule } from 'ng-chat';
+import { HttpModule } from '@angular/http';
+import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
+
+const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginPageComponent,
+    PatientPortalComponent,
+    PhysicianPortalComponent,
+    AdminPortalComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    DemoMaterialModule,
+    FormsModule,
+    HttpModule,
+    AppRoutingModule,
+    NgChatModule,
+    SocketIoModule.forRoot(config)
   ],
   providers: [],
   bootstrap: [AppComponent]
