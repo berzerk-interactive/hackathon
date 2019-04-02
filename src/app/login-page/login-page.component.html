@@ -1,3 +1,32 @@
-<p>
-  login-page works!
+<div id="login">
+  <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+    <p>
+  Form Status: {{ loginForm.status }} {{loginForm}}
 </p>
+    <!-- {{loginForm.value.userName}} -->
+    <mat-form-field >
+      <input matInput placeholder="User Name" formControlName="userName">
+      <mat-error *ngIf="loginForm.hasError('required')">
+        This field is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field hintLabel="Max 10 characters" >
+      <input matInput #input  formControlName="password" placeholder="Enter your password" maxlength="10"  [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+
+    </mat-form-field>
+    <!-- <mat-form-field >
+      <mat-select placeholder="Type of login" [(value)]="selected">
+        <mat-option value="Patient">Patient</mat-option>
+        <mat-option value="Physician">Physician</mat-option>
+        <mat-option value="Admin">Admin</mat-option>
+      </mat-select>
+    </mat-form-field> -->
+    <button type="submit"  color="primary" [disabled]="!loginForm.valid" mat-button>Login</button>
+
+  </form>
+
+</div>

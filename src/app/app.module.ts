@@ -14,9 +14,9 @@ import {Http} from '@angular/http'
 import { NgChatModule } from 'ng-chat';
 import { HttpModule } from '@angular/http';
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
-
+import { HttpClientModule } from '@angular/common/http';
 const config: SocketIoConfig = { url: '/', options: {} };
-
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +31,8 @@ const config: SocketIoConfig = { url: '/', options: {} };
     DemoMaterialModule,
     FormsModule,
     HttpModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule,
     NgChatModule,
     SocketIoModule.forRoot(config)

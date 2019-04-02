@@ -13,19 +13,19 @@
         <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>
       </mat-nav-list>
       <div *ngIf="!userId" class="form-box">
-          <h3>Join room</h3>
+          <h3>Join Chat:</h3>
 
-          <small>Pick a username to join a ng-chat node.js room. Hint: Try different browsers or incognito tabs.</small>
+          <small>Add name for chat</small>
 
           <form #chatInfoForm="ngForm" (ngSubmit)="joinRoom()">
-
-              <label for="name">Name:</label>
-              <input type="text" class="form-control" id="name"
-                     required
-                     [(ngModel)]="username" name="name"
-                     #name="ngModel">
-
-              <button type="submit" class="btn btn-success" [disabled]="!chatInfoForm.form.valid">Join</button>
+              <mat-form-field >
+                <input matInput placeholder="Name" type="text" class="form-control" id="name"
+                       required
+                       [(ngModel)]="username" name="name"
+                       #name="ngModel">
+              </mat-form-field >
+              <br>
+              <button  mat-button type="submit" class="btn btn-success" [disabled]="!chatInfoForm.form.valid">Join</button>
           </form>
       </div>
     </mat-sidenav>

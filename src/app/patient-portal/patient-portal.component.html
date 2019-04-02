@@ -1,3 +1,14 @@
-<p>
-  patient-portal works!
-</p>
+<!-- <p>
+  patient-portal works! {{data |json}}
+</p> -->
+
+<mat-list role="list" >
+  <mat-list-item role="listitem">mpi: {{data.mpi}}</mat-list-item>
+  <mat-list-item role="listitem"> age: {{data.age}}</mat-list-item>
+  <mat-list-item role="listitem"> email: {{data.emailId}}</mat-list-item>
+  <mat-list-item role="listitem">firstName: {{data.firstName}}</mat-list-item>
+  <mat-list-item role="listitem">lastName: {{data.lastName}}</mat-list-item>
+  <mat-list-item role="listitem"> homePhone: {{data.homePhone}}</mat-list-item>
+  <mat-list-item role="listitem"> zipcode:{{data.zipCode}}</mat-list-item>
+  <mat-list-item role="listitem"> cellphone:{{data.cellPhone}}</mat-list-item>
+</mat-list>
