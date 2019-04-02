@@ -24,6 +24,7 @@ export class LoginPageComponent implements OnInit {
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.loginForm.value);
+    sessionStorage.setItem('mpi', this.loginForm.value.userName);
     // const redirectUrl = route['_routerState']['url'];
     this.router.navigateByUrl(
      this.router.createUrlTree(

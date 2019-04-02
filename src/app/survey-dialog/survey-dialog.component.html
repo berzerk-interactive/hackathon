@@ -2,9 +2,9 @@
 <form (ngSubmit)="onSubmit()" [formGroup]="surveyForm">
 
       <div mat-dialog-content id="survey">
-        <p>
+        <!-- <p>
       Form Status: {{ surveyForm.status }} {{loginForm}}
-      </p>
+      </p> -->
         <mat-form-field >
             <mat-select placeholder="{{questions.question1}}" formControlName="q1">
               <mat-option value="1">1</mat-option>

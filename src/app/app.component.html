@@ -2,7 +2,7 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
   <mat-toolbar color="primary" class="example-toolbar">
     <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-    <h1 class="example-app-name">Davita Care App</h1>
+    <h1 class="example-app-name">DaVita Care App</h1>
   </mat-toolbar>
 
   <mat-sidenav-container class="example-sidenav-container"
@@ -15,20 +15,22 @@
 
       </mat-nav-list>
       <div *ngIf="!userId" class="form-box">
+        <mat-card>
           <h3>Join Chat:</h3>
 
           <small>Add name for chat</small>
 
           <form #chatInfoForm="ngForm" (ngSubmit)="joinRoom()">
-              <mat-form-field >
-                <input matInput placeholder="Name" type="text" class="form-control" id="name"
-                       required
-                       [(ngModel)]="username" name="name"
-                       #name="ngModel">
-              </mat-form-field >
-              <br>
-              <button  mat-button type="submit" class="btn btn-success" [disabled]="!chatInfoForm.form.valid">Join</button>
+            <mat-form-field >
+              <input matInput placeholder="Name" type="text" class="form-control" id="name"
+                     required
+                     [(ngModel)]="username" name="name"
+                     #name="ngModel">
+            </mat-form-field >
+            <br>
+            <button  mat-button type="submit" class="btn btn-success" [disabled]="!chatInfoForm.form.valid">Join</button>
           </form>
+        </mat-card>
       </div>
     </mat-sidenav>
 

@@ -31,7 +31,7 @@ export class AppComponent implements OnDestroy {
 
   public adapter: ChatAdapter;
 
-  fillerNav = ['Billing', 'Events', 'Messaging', "labs", 'admin', 'physician/1', 'patient/1'];
+  fillerNav = ['Billing', 'Events', 'Messaging', 'Labs', 'admin'];
 
   fillerContent = Array.from({length: 50}, () =>
       `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut

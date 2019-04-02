@@ -42,7 +42,7 @@ export class SurveyDialogComponent implements OnInit {
   }
   sendSurvey(): Observable<any>{
     let body = {
-      mpi: 1,
+      mpi: sessionStorage.getItem('mpi'),
       survey_id: this.questions.surveyQuestionsId,
       question1:this.questions.question1,
       question2:this.questions.question2,
@@ -53,7 +53,7 @@ export class SurveyDialogComponent implements OnInit {
     }
     console.log(body)
 
-    return this.http.post(`${this.ip}/surveys/${this.questions.surveyQuestionsId}/survey`, body).pipe(
+    return this.http.post(`${this.ip}/surveys/${body.mpi}/survey`, body).pipe(
       // console.log(err)
     );
 

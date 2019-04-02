@@ -2,25 +2,44 @@
   <mat-card class="example-card" *ngFor="let patient of patients">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{patient.firstName}}</mat-card-title>
+      <mat-card-title>{{patient.firstName}} : {{patient.level}}</mat-card-title>
+      <mat-card-title></mat-card-title>
       <mat-card-subtitle>{{patient.lastName}}</mat-card-subtitle>
     </mat-card-header>
-    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+    <!-- <img mat-card-image src="https://cdn2.thecatapi.com/images/4fp.gif" alt="Photo of a Shiba Inu"> -->
     <mat-card-content>
       <ul>
-        <li>{{patient.mpi}}</li>
-        <li>{{patient.age}}</li>
-        <li>{{patient.emailId}}</li>
-        <li>{{patient.cellPhone}}</li>
+        <li>MPI: {{patient.mpi}}</li>
+        <li>Age: {{patient.age}}</li>
+        <!-- <li>Phone: {{patient.cellPhone}}</li> -->
+        <li>level: {{patient.level}}</li>
+        <li>Zip: {{patient.zipCode}}</li>
       </ul>
-
+      <!-- age: 32
+      cellPhone: "4692885081"
+      chat_count: 166
+      emailId: "gaurav.joshi@davita.com"
+      email_count: 6
+      firstName: "Gaurav"
+      homePhone: ""
+      lastName: "Joshi"
+      level: "L1"
+      sms_count: 2
+      telephone_count: 10
+      video_count: 15
+      zipCode: 80130 -->
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button (click)="api('video',patient.mpi)">video</button>
-      <button mat-button (click)="api('chat', patient.mpi)">chat</button>
-      <button mat-button (click)="api('phone', patient.mpi)">phone</button>
-      <button mat-button (click)="api('email', patient.mpi)">email</button>
-      <button mat-button (click)="api('text', patient.mpi)">text</button>
+      <ul class="actions">
+        <li>
+          <button mat-button color="primary" matBadge="{{patient.video_count}}" matBadgePosition="before" matBadgeColor="accent" (click)="api('video',patient.mpi)">Video</button>
+        </li>
+      <li> <button mat-button color="primary" matBadge="{{patient.chat_count}}" matBadgePosition="before" matBadgeColor="accent" (click)="api('chat', patient.mpi)">Chat</button></li>
+      <li> <button mat-button color="primary" matBadge="{{patient.telephone_count}}" matBadgePosition="before" matBadgeColor="accent" (click)="api('phone', patient.mpi)">Phone: {{patient.cellPhone}}</button></li>
+      <li> <button mat-button color="primary" matBadge="{{patient.email_count}}" matBadgePosition="before" matBadgeColor="accent" (click)="api('email', patient.mpi)">Email: {{patient.emailId}}</button></li>
+      <li> <button mat-button color="primary" matBadge="{{patient.sms_count}}" matBadgePosition="before" matBadgeColor="accent" (click)="api('sms', patient.mpi)">SMS: {{patient.cellPhone}}</button></li>
+    </ul>
+
     </mat-card-actions>
   </mat-card>
 </div>
