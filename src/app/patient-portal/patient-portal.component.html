@@ -1,14 +1,16 @@
 <!-- <p>
   patient-portal works! {{data |json}}
 </p> -->
-
-<mat-list role="list" >
-  <mat-list-item role="listitem">mpi: {{data.mpi}}</mat-list-item>
-  <mat-list-item role="listitem"> age: {{data.age}}</mat-list-item>
-  <mat-list-item role="listitem"> email: {{data.emailId}}</mat-list-item>
-  <mat-list-item role="listitem">firstName: {{data.firstName}}</mat-list-item>
-  <mat-list-item role="listitem">lastName: {{data.lastName}}</mat-list-item>
-  <mat-list-item role="listitem"> homePhone: {{data.homePhone}}</mat-list-item>
-  <mat-list-item role="listitem"> zipcode:{{data.zipCode}}</mat-list-item>
-  <mat-list-item role="listitem"> cellphone:{{data.cellPhone}}</mat-list-item>
-</mat-list>
+<mat-card style="margin-right: 40px; margin-left: 40px">
+  <mat-list role="list">
+    <mat-list-item role="listitem"><b>MPI:</b>{{data.mpi}}</mat-list-item>
+    <mat-list-item role="listitem"><b>Age:</b>{{data.age}}</mat-list-item>
+    <mat-list-item role="listitem"><b>Email:</b>{{data.emailId}}</mat-list-item>
+    <mat-list-item role="listitem"><b>First Name:</b>{{data.firstName}}</mat-list-item>
+    <mat-list-item role="listitem"><b>Last Name:</b>{{data.lastName}}</mat-list-item>
+    <mat-list-item role="listitem"><b>Home Phone:</b>{{data.homePhone}}</mat-list-item>
+    <mat-list-item role="listitem"><b>Zipcode:</b>{{data.zipCode}}</mat-list-item>
+    <mat-list-item role="listitem"><b>Cellphone:</b>{{data.cellPhone}}</mat-list-item>
+    <mat-list-item role="listitem"><b>Level:</b>{{clicks.level}}</mat-list-item>
+  </mat-list>
+</mat-card>

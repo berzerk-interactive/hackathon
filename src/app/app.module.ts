@@ -19,6 +19,8 @@ const config: SocketIoConfig = { url: '/', options: {} };
 import { ReactiveFormsModule } from '@angular/forms';
 import { SurveyDialogComponent } from './survey-dialog/survey-dialog.component';
 
+import { MatInputModule } from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +41,8 @@ import { SurveyDialogComponent } from './survey-dialog/survey-dialog.component';
     HttpClientModule,
     AppRoutingModule,
     NgChatModule,
-    SocketIoModule.forRoot(config)
+    SocketIoModule.forRoot(config),
+    MatInputModule,
   ],
   entryComponents: [SurveyDialogComponent],
   providers: [],

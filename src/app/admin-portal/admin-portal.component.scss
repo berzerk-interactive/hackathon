@@ -1,0 +1,14 @@
+// .patient {
+//   flex-direction: row;
+// }
+.example-card {
+  max-width: 29%;
+  min-width: 100px;
+  float: left;
+  margin: 20px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}

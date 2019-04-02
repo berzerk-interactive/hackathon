@@ -27,7 +27,7 @@ export class LoginPageComponent implements OnInit {
     // const redirectUrl = route['_routerState']['url'];
     this.router.navigateByUrl(
      this.router.createUrlTree(
-       ['/patient/1'], {
+       [`/patient/${this.loginForm.value.userName}`], {
          queryParams: {
 
          }
