@@ -3,19 +3,19 @@ import { Observable, of } from "rxjs";
 import { map, catchError } from 'rxjs/operators';
 import { Socket } from 'ng-socket-io';
 import { Http, Response } from '@angular/http';
+import { Constants } from './constants';
 
 export class SocketIOAdapter extends ChatAdapter
 {
     private socket: Socket;
     private http: Http;
     private userId: string;
-
+    private ip:string = Constants.IP_ADDRESS
     constructor(userId: string, socket: Socket, http: Http) {
         super();
         this.socket = socket;
         this.http = http;
         this.userId = userId;
-
         this.InitializeSocketListerners();
     }
 
@@ -23,7 +23,7 @@ export class SocketIOAdapter extends ChatAdapter
         // List connected users to show in the friends list
         // Sending the userId from the request body as this is just a demo
         return this.http
-            .post("http://localhost:3000/listFriends", { userId: this.userId })
+            .post("http://localhost:3000/api/listFriends", { userId: this.userId })
             .pipe(
                 map((res:Response) => res.json()),
                 catchError((error:any) => Observable.throw(error.json().error || 'Server error'))

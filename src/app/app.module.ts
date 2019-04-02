@@ -17,6 +17,8 @@ import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
 import { HttpClientModule } from '@angular/common/http';
 const config: SocketIoConfig = { url: '/', options: {} };
 import { ReactiveFormsModule } from '@angular/forms';
+import { SurveyDialogComponent } from './survey-dialog/survey-dialog.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +26,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     PatientPortalComponent,
     PhysicianPortalComponent,
     AdminPortalComponent,
+    SurveyDialogComponent,
+    SurveyDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +41,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     NgChatModule,
     SocketIoModule.forRoot(config)
   ],
+  entryComponents: [SurveyDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

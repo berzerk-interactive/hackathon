@@ -22,11 +22,11 @@ app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 // app.use(express.static(path.join(__dirname, 'dist')));
 
-app.use('/', express.static(path.join(__dirname, '../dist/hackathon/')));
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
-app.use('/sms', usersRouter);
-app.use('/send_sms', sendSmsRouter);
+app.use('/api/sms', usersRouter);
+app.use('/api/send_sms', sendSmsRouter);
+app.use('/', express.static(path.join(__dirname, '../dist/hackathon/')));
 
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {

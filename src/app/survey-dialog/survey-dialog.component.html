@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>Hi, Please fill out our survey. 1 sucks, 5 is awesome!</h1>
+<form (ngSubmit)="onSubmit()" [formGroup]="surveyForm">
+
+      <div mat-dialog-content id="survey">
+        <p>
+      Form Status: {{ surveyForm.status }} {{loginForm}}
+      </p>
+        <mat-form-field >
+            <mat-select placeholder="{{questions.question1}}" formControlName="q1">
+              <mat-option value="1">1</mat-option>
+              <mat-option value="2">2</mat-option>
+              <mat-option value="3">3</mat-option>
+              <mat-option value="4">4</mat-option>
+              <mat-option value="5">5</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field >
+          <mat-select placeholder="{{questions.question2}}" formControlName="q2">
+            <mat-option value="1">1</mat-option>
+            <mat-option value="2">2</mat-option>
+            <mat-option value="3">3</mat-option>
+            <mat-option value="4">4</mat-option>
+            <mat-option value="5">5</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field >
+          <mat-select placeholder="{{questions.question3}}" formControlName="q3">
+            <mat-option value="1">1</mat-option>
+            <mat-option value="2">2</mat-option>
+            <mat-option value="3">3</mat-option>
+            <mat-option value="4">4</mat-option>
+            <mat-option value="5">5</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">No Thanks</button>
+        <button mat-button [mat-dialog-close]="data.animal" (click)="onSubmit()" cdkFocusInitial>Submit</button>
+      </div>
+</form>
